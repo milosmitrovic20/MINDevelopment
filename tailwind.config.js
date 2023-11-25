@@ -12,7 +12,7 @@ module.exports = {
         'primary-hover': '#ed7a45',
       },
       fontFamily: {
-        'laraSoft': ['LaraSoft', 'sans-serif']
+        'andikaRegular': ['AndikaRegular', 'sans-serif'],
       }
     },
   },

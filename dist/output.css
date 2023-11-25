@@ -879,6 +879,10 @@ video {
   text-align: center;
 }
 
+.font-andikaRegular {
+  font-family: AndikaRegular, sans-serif;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1021,21 +1025,17 @@ video {
 }
 
 @font-face {
-  font-family: 'LaraSoft';
+  font-family: 'AndikaRegular';
 
-  src: url('/fontovi/Lara-Soft.ttf') format('truetype');
+  src: url('../fontovi/Andika-Regular.ttf') format('truetype');
 
   font-weight: normal;
 
   font-style: normal;
 }
 
-body {
-  font-family: LaraSoft, sans-serif;
-}
-
 html {
-  font-family: LaraSoft, sans-serif;
+  font-family: AndikaRegular, sans-serif;
 }
 
 .hover\:scale-110:hover {

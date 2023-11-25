@@ -3,16 +3,12 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'LaraSoft';
-    src: url('/fontovi/Lara-Soft.ttf') format('truetype');
+    font-family: 'AndikaRegular';
+    src: url('../fontovi/Andika-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-}
+  }
 
-body {
-    @apply font-laraSoft;
-}
-
-html {
-    @apply font-laraSoft;
-}
+  html {
+    @apply font-andikaRegular;
+  }

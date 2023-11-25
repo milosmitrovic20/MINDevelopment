@@ -19,11 +19,11 @@ async function loginUser(event) {
         if (data.status === 'success') {
             window.location.href = 'http://мајндивелопмент.срб/magazin/magazin.html'; // Replace 'dashboard.html' with the URL you want to redirect to
         } else {
-            alert(data.message);
+            alert("Погрешна шифра или корисничко име!");
         }
 
     } catch (error) {
-        console.error('Error:', error); // Handle the error
+        console.error('Грешка:', error); // Handle the error
     }
 }
 

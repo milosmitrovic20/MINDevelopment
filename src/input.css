@@ -7,4 +7,12 @@
     src: url('/fontovi/Lara-Soft.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-  }
+}
+
+body {
+    @apply font-laraSoft;
+}
+
+html {
+    @apply font-laraSoft;
+}

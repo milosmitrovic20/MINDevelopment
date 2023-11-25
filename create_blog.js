@@ -1,5 +1,5 @@
-async function loginUser(username, password) {
-    const apiUrl = 'http://мајндивелопмент.срб/DB//login.php'; // Replace with your actual API URL
+async function createBlogPost(korisnikId, naslov, sadrzaj) {
+    const apiUrl = 'http://мајндивелопмент.срб/DB/create_blog.php'; // Replace with your actual API URL
 
     try {
         const response = await fetch(apiUrl, {
@@ -7,16 +7,16 @@ async function loginUser(username, password) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ username, password })
+            body: JSON.stringify({ korisnikId, naslov, sadrzaj })
         });
 
         const data = await response.json();
         if (data.status === 'success') {
             console.log(data.message);
-            // Handle successful login (e.g., redirect to a dashboard)
+            // Handle successful blog creation (e.g., redirect or update UI)
         } else {
             console.log(data.message);
-            // Handle login failure (e.g., show an error message)
+            // Handle failure (e.g., show an error message)
         }
 
     } catch (error) {
@@ -25,4 +25,4 @@ async function loginUser(username, password) {
 }
 
 // Example usage
-loginUser('username', 'password123');
+createBlogPost(1, 'Sample Blog Title', 'This is the content of the blog.');

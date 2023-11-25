@@ -13,9 +13,11 @@ Options -Indexes
 # URL rewriting and clean URLs
 RewriteEngine On
 
+# Ne treba nam za sad dok nemamo SSL
 # Redirect to HTTPS
-RewriteCond %{HTTPS} !=on
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 
 # Rewrite certain paths to 'index.php' for front controller pattern
 RewriteCond %{REQUEST_FILENAME} !-f

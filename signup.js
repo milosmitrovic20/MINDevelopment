@@ -1,7 +1,7 @@
 
 
 async function createUser(username, password, ime, prezime, email) {
-    const apiUrl = 'https://мајндивелопмент.срб/DB/create_user.php'; // Replace with your actual API URL
+    const apiUrl = 'http://мајндивелопмент.срб/DB/create_user.php'; // Replace with your actual API URL
 
     try {
         const response = await fetch(apiUrl, {

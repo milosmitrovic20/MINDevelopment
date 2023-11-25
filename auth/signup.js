@@ -1,7 +1,5 @@
-
-
 async function createUser(username, password, ime, prezime, email) {
-    const apiUrl = 'http://мајндивелопмент.срб/DB/create_user.php'; // Replace with your actual API URL
+    const apiUrl = 'http://мајндивелопмент.срб/DB/create_user.php'; 
 
     try {
         const response = await fetch(apiUrl, {
@@ -19,12 +17,11 @@ async function createUser(username, password, ime, prezime, email) {
         });
 
         const data = await response.json();
-        console.log(data); // Handle the response data
+        console.log(data);
 
     } catch (error) {
-        console.error('Error:', error); // Handle the error
+        console.error('Error:', error);
     }
 }
 
-// Example usage
 createUser('newusername', 'password123', 'John', 'Doe', 'john@example.com');

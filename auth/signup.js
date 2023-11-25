@@ -1,7 +1,7 @@
 async function createUser(event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault();
 
-    const apiUrl = 'http://мајндивелопмент.срб/DB/create_user.php'; // Replace with your actual API URL
+    const apiUrl = 'http://мајндивелопмент.срб/DB/create_user.php';
     const formData = new FormData(event.target);
 
     const email = formData.get('email');
@@ -25,10 +25,8 @@ async function createUser(event) {
         const data = await response.json();
 
         if (data.status === 'success') {
-            // Redirect to a specific page upon successful signup
-            window.location.href = 'login.html'; // Replace with the URL you want to redirect to
+            window.location.href = 'login.html';
         } else {
-            // Alert the user in case of a failure
             alert(data.message || "Пријављивање неуспешно. Молим Вас покушајте поново.");
         }
 

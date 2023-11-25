@@ -5,7 +5,7 @@ async function loginUser(event) {
     const formData = new FormData(event.target);
     const username = formData.get('email'); // Assuming 'email' field is used as the username
     const password = formData.get('password');
-
+    console.log("ALOALO");
     try {
         const response = await fetch(apiUrl, {
             method: 'POST',
@@ -27,7 +27,5 @@ async function loginUser(event) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.querySelector('form');
-    loginForm.addEventListener('submit', loginUser);
-});
+const loginForm = document.querySelector('form');
+loginForm.addEventListener('submit', loginUser);

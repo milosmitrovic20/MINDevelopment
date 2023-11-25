@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["index.html"],
+  content: ["index.html", "magazin/magazin.html"],
   theme: {
     extend: {
       colors: {
@@ -9,6 +9,7 @@ module.exports = {
         'primary': '#ef8e61',
         'secondary': '#092e3e',
         'accent': '#13a4e7',
+        'primary-hover': '#ed7a45',
       },
     },
   },

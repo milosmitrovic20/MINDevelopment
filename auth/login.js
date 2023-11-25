@@ -1,11 +1,11 @@
 async function loginUser(event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault();
 
-    const apiUrl = 'http://мајндивелопмент.срб/DB/login.php'; // Replace with your actual API URL
+    const apiUrl = 'http://мајндивелопмент.срб/DB/login.php';
     const formData = new FormData(event.target);
-    const username = formData.get('email'); // Assuming 'email' field is used as the username
+    const username = formData.get('email');
     const password = formData.get('password');
-    console.log("ALOALO");
+
     try {
         const response = await fetch(apiUrl, {
             method: 'POST',
@@ -17,13 +17,13 @@ async function loginUser(event) {
 
         const data = await response.json();
         if (data.status === 'success') {
-            window.location.href = 'http://мајндивелопмент.срб/magazin/magazin.html'; // Replace 'dashboard.html' with the URL you want to redirect to
+            window.location.href = 'http://мајндивелопмент.срб/magazin/magazin.html';
         } else {
             alert("Погрешна шифра или корисничко име!");
         }
 
     } catch (error) {
-        console.error('Грешка:', error); // Handle the error
+        console.error('Грешка:', error);
     }
 }
 

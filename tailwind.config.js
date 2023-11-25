@@ -11,6 +11,9 @@ module.exports = {
         'accent': '#13a4e7',
         'primary-hover': '#ed7a45',
       },
+      fontFamily: {
+        'laraSoft': ['LaraSoft', 'sans-serif']
+      }
     },
   },
   plugins: [],

@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'LaraSoft';
+    src: url('/fontovi/Lara-Soft.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }

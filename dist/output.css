@@ -884,6 +884,10 @@ video {
   text-align: center;
 }
 
+.font-laraSoft {
+  font-family: LaraSoft, sans-serif;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1003,6 +1007,16 @@ video {
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+@font-face {
+  font-family: 'LaraSoft';
+
+  src: url('/fontovi/Lara-Soft.ttf') format('truetype');
+
+  font-weight: normal;
+
+  font-style: normal;
 }
 
 .hover\:scale-110:hover {

@@ -17,11 +17,9 @@ async function loginUser(event) {
 
         const data = await response.json();
         if (data.status === 'success') {
-            console.log(data.message);
-            // Handle successful login (e.g., redirect to a dashboard)
+            window.location.href = 'http://мајндивелопмент.срб/magazin/magazin.html'; // Replace 'dashboard.html' with the URL you want to redirect to
         } else {
-            console.error(data.message);
-            // Handle login failure (e.g., show an error message)
+            alert(data.message);
         }
 
     } catch (error) {

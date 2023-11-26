@@ -145,4 +145,38 @@ document.getElementById('komentarForma').addEventListener('submit', async (event
         alert("Дошло је до грешке! " + error);
     }
 });
-  
+
+// Function to handle form submission
+const handleSubmit = async (event) => {
+    event.preventDefault();
+    const email = document.getElementById('email').value;
+
+    // Your API endpoint URL
+    const apiUrl = 'http://мајндивелопмент.срб/upload_email.php';
+
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email }),
+        });
+
+        const data = await response.json();
+
+        if (data.status === 'success') {
+            // Handle success, e.g., show a success message
+            console.log(data.message);
+        } else {
+            // Handle errors, e.g., display an error message
+            console.error(data.message);
+        }
+    } catch (error) {
+        // Handle network errors or other exceptions
+        console.error('Error:', error);
+    }
+};
+
+const subscriptionForm = document.getElementById('subscriptionForm');
+subscriptionForm.addEventListener('submit', handleSubmit);

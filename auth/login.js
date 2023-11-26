@@ -3,7 +3,7 @@ async function loginUser(event) {
 
     const apiUrl = 'http://мајндивелопмент.срб/DB/login.php';
     const formData = new FormData(event.target);
-    const username = formData.get('email');
+    const username = formData.get('username');
     const password = formData.get('password');
 
     try {
@@ -17,7 +17,7 @@ async function loginUser(event) {
 
         const data = await response.json();
         if (data.status === 'success') {
-            window.location.href = 'http://мајндивелопмент.срб/magazin/magazin.html';
+            window.location.href = 'http://мајндивелопмент.срб/magazin/magazin.php';
         } else {
             alert("Погрешна шифра или корисничко име!");
         }

@@ -23,12 +23,7 @@ if (openModalButton != null) {
     });
 }
 
-const toggleDropdown = () => {
-    const dropdown = document.getElementById("dropdown");
-    dropdown.classList.toggle("hidden");
-};
 
-document.getElementById("dropdown-button").addEventListener('click', toggleDropdown);
 
 async function getAllBlogPosts() {
     const apiUrl = 'http://мајндивелопмент.срб/DB/get_blogs.php'; 
@@ -123,4 +118,22 @@ document.getElementById('blogForm').addEventListener('submit', async function(ev
     } catch (error) {
         console.error('Error:', error);
     }
+});
+
+// za search bar
+document.getElementById("search-dropdown").addEventListener('input', function(event) {
+    event.preventDefault();
+
+    const searchTerm = event.target.value.toLowerCase();
+    const blogPosts = document.querySelectorAll('.grid article');
+
+    blogPosts.forEach(post => {
+        const title = post.querySelector('h2').textContent.toLowerCase();
+        const content = post.querySelector('p').textContent.toLowerCase();
+        if (title.includes(searchTerm) || content.includes(searchTerm)) {
+            post.style.display = '';
+        } else {
+            post.style.display = 'none';
+        }
+    });
 });

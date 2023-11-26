@@ -55,3 +55,4 @@ async function fetchComments(blogId) {
     }
 }
 
+//fetchComments(blogId);

@@ -111,7 +111,7 @@ document.getElementById('blogForm').addEventListener('submit', async function(ev
                 sadrzaj: sadrzaj, 
                 kategorija: kategorija,
                 autor_korisnicko_ime: "Ви",
-                datum_objave: new Date().toISOString() // Use current date-time
+                datum_objave: new Date().toISOString()
             };
             const noviBlogHTML = createBlogPostHTML(noviBlog);
             blogContainer.innerHTML = noviBlogHTML + blogContainer.innerHTML;

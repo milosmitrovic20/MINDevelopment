@@ -11,7 +11,7 @@ function verifyUser($pdo, $identifier, $password) {
     $user = $stmt->fetch();
 
     if ($user && password_verify($password, $user['lozinka'])) {
-        $_SESSION['userID'] = $user['id'];
+        $_SESSION['userID'] = $user['korisnik_id'];
         return ["status" => "success", "message" => "Login successful"];
     } else {
         return ["status" => "error", "message" => "Invalid username/email or password"];

@@ -22,7 +22,7 @@ try {
     }
 
     // Fetch author details from korisnici table
-    $authorSql = "SELECT korisnici.ime, korisnici.prezime, korisnici.korisnicko_ime
+    $authorSql = "SELECT korisnici.ime, korisnici.prezime, korisnici.korisnicko_ime, korisnici.slika
                   FROM korisnici
                   WHERE korisnici.korisnik_id = ?";
     $authorStmt = $pdo->prepare($authorSql);

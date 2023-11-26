@@ -24,14 +24,12 @@ session_start();
                     <?php
                     if(isset($_SESSION['userID'])) {
                     ?>
+                        <button id="defaultModalButton" data-modal-target="defaultModal" data-modal-toggle="defaultModal" class="bg-primary text-secondary hover:bg-primary-hover font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2" type="button">
+                            Креирај блог
+                        </button>
                         <form action="../DB/logout.php" method="post">
                             <button type="submit" name="logout" class="text-primary bg-transparent hover:text-primary-hover font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">Одјави се</button>
                         </form>
-                        <button id="defaultModalButton" data-modal-target="defaultModal" data-modal-toggle="defaultModal" class="text-primary bg-transparent hover:text-primary-hover font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2" type="button">
-                            Креирај блог
-                        </button>
-                        <a href="create_blog.html" class="text-secondary bg-primary hover:bg-primary-hover font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2"></a>
-
                     <?php
                     } else {
                     ?>
@@ -194,7 +192,9 @@ session_start();
         </div>
     </section>
 
-    <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+    <div class="hidden bg-background opacity-70 top-0 left-0 w-full h-full z-40" id="overlay"></div>
+
+    <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-60 justify-center items-center w-full md:inset-0 h-modal md:h-full">
         <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
             <div class="relative p-4 bg-background rounded-lg shadow sm:p-5">
                 <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">

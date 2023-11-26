@@ -1,34 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const blogId = urlParams.get('id');
 
-async function postComment(blogId, commentText) {
-    const apiUrl = 'http://мајндивелопмент.срб/DB/create_comment.php';
-
-    try {
-        const response = await fetch(apiUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ blogId, tekst: commentText })
-        });
-
-        const data = await response.json();
-
-        if (data.status === 'success') {
-            console.log(data.message);
-            // Additional code to handle success (e.g., clear comment form, update comments on the page)
-        } else {
-            console.error(data.message);
-            // Additional code to handle errors (e.g., display error message to user)
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        // Additional error handling (e.g., display error message)
-    }
-}
-
-async function fetchBlogDetailsAndComments(blogId) {
+async function fetchBlogDetailsAndComments() {
     //Vraca
     const apiUrl = `http://мајндивелопмент.срб/DB/get_blog_by_id.php?blogId=${blogId}`;
 
@@ -59,13 +32,33 @@ function displayBlogDetails(blogDetails) {
     // Example: document.querySelector('#blogTitle').textContent = blogDetails.naslov;
 }
 
-function displayComments(comments) {
-    // Implement this function to update the HTML with comments
-    // Example: comments.forEach(comment => { /* append comment to comments section */ });
-}
+fetchBlogDetailsAndComments();
 
-// Call this function at the start of the page or when needed
-// Assuming blogId is available
-fetchBlogDetailsAndComments(blogId);
 
-//fetchComments(blogId);
+document.getElementById('komentarForma').addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const commentText = document.getElementById('comment').value;
+    const apiUrl = 'http://мајндивелопмент.срб/DB/create_comment.php';
+
+    try {
+        const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ blogId, tekst: commentText }),
+        });
+
+        const data = await response.json();
+
+        if (data.status === 'success') {
+            console.log(data.message);
+        } else {
+            alert("Дошло је до грешке! " + data.message);
+        }
+    } catch (error) {
+        alert("Дошло је до грешке! " + error);
+    }
+});
+  

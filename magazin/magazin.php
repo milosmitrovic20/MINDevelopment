@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +26,7 @@
                     ?>
                         <a href="create_blog.html" class="text-secondary bg-primary hover:bg-primary-hover font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">Креирај блог</a>
                         <form action="../DB/logout.php" method="post">
-                            <button type="submit" name="logout" class="uppercase text-text bg-primary font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0">Log out</button>
+                            <button type="submit" name="logout" class="text-secondary bg-primary hover:bg-primary-hover font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">Одјави се</button>
                         </form>
                     <?php
                     } else {
@@ -79,7 +84,7 @@
                         <span class="text-sm">14 days ago</span>
                     </div>
                     <h2 class="mb-2 text-2xl font-bold tracking-tight text-white"><a href="#">How to quickly deploy a static website</a></h2>
-                    <p class="mb-5 font-light text-gray-400">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.</p>
+                    <p class="line-clamp-3 mb-5 font-light text-gray-400">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers. Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.</p>
                     <div class="flex justify-between items-center">
                         <div class="flex items-center space-x-4">
                             <img class="w-7 h-7 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Jese Leos avatar" />
@@ -102,7 +107,7 @@
                         <span class="text-sm">14 days ago</span>
                     </div>
                     <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a href="#">Our first project with React</a></h2>
-                    <p class="mb-5 font-light text-gray-400">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.</p>
+                    <p class="line-clamp-3 mb-5 font-light text-gray-400">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.</p>
                     <div class="flex justify-between items-center">
                         <div class="flex items-center space-x-4">
                             <img class="w-7 h-7 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Green avatar" />
@@ -136,7 +141,7 @@
                         <a href="#" class="hover:underline">Ресурси</a>
                     </li>
                     <li class="mb-4">
-                        <a href="magazin/magazin.html" class="hover:underline">Магазин</a>
+                        <a href="magazin/magazin.php" class="hover:underline">Магазин</a>
                     </li>
                 </ul>
             </div>

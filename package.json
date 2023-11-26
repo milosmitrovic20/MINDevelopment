@@ -25,5 +25,8 @@
   "homepage": "https://github.com/seanvm/fontselect-jquery-plugin#readme",
   "devDependencies": {
     "flowbite-typography": "^1.0.3"
+  },
+  "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4"
   }
 }

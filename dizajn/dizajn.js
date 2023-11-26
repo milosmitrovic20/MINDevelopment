@@ -5,6 +5,6 @@ $(function(){
       
       font = font.split(':');
       
-      $('p').css('font-family', font[0]);
+      $('body').css('font-family', font[0]);
     });
 });

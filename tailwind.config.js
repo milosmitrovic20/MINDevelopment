@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["index.html", "magazin/magazin.html", "magazin/create_blog.html", "magazin/blog.html", "auth/login.php", "auth/signup.html", "dizajn/dizajn.html"],
+  content: ["index.html", "magazin/magazin.php", "magazin/create_blog.html", "magazin/blog.html", "auth/login.php", "auth/signup.html", "dizajn/dizajn.html"],
   theme: {
     extend: {
       colors: {
@@ -18,5 +18,6 @@ module.exports = {
   },
   plugins: [
     require('flowbite-typography'),
+    require('@tailwindcss/line-clamp'),
   ],
 }

@@ -23,7 +23,8 @@ try {
         exit;
     }
 
-    $commentSql = "SELECT komentari.komentar_id, komentari.tekst, komentari.datum_komentara, korisnici.korisnicko_ime
+    $commentSql = "SELECT komentari.komentar_id, komentari.tekst, komentari.datum_komentara, 
+                          korisnici.korisnicko_ime, korisnici.ime, korisnici.prezime
                     FROM komentari
                     INNER JOIN korisnici ON komentari.korisnik_id = korisnici.korisnik_id
                     WHERE komentari.blog_id = ?

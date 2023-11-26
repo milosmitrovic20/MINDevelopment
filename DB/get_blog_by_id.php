@@ -8,7 +8,7 @@ include 'db_conn.php';
 $blogId = isset($_GET['blogId']) ? $_GET['blogId'] : null;
 
 if (!$blogId) {
-    echo json_encode(["status" => "error", "message" => "Blog ID is required"]);
+    echo json_encode(["status" => "error", "message" => "BlogID је неопходан"]);
     exit;
 }
 
@@ -19,7 +19,7 @@ try {
     $blog = $blogStmt->fetch(PDO::FETCH_ASSOC);
 
     if (!$blog) {
-        echo json_encode(["status" => "error", "message" => "Blog not found"]);
+        echo json_encode(["status" => "error", "message" => "Блог није пронађен"]);
         exit;
     }
 

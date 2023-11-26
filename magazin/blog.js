@@ -77,10 +77,10 @@ function displayBlogDetails(blogDetails, comments, author) {
                         <h2 class="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Дискусија</h2>
                     </div>
                     <form class="mb-6" id="komentarForma">
-                        <div class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                        <div class="py-2 px-4 mb-4 bg-secondary rounded-lg rounded-t-lg border border-accent">
                             <label for="comment" class="sr-only">Твој коментар</label>
                             <textarea id="comment" rows="6"
-                                class="px-0 w-full text-sm text-text resize-none border border-accent  bg-secondary"
+                                class="px-0 w-full text-sm text-text resize-none border-0  bg-secondary"
                                 placeholder="Напиши коментар..." required></textarea>
                         </div>
                         <button type="submit"

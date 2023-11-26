@@ -3,10 +3,19 @@ async function kreirajKorisnika(event) {
 
     const apiUrl = 'http://мајндивелопмент.срб/DB/create_user.php';
     const formData = new FormData(event.target);
-
-    const ime = formData.get('firstName');
-    const prezime = formData.get('lastName');
-    const korisnickoIme = formData.get('username');
+    let ime, prezime;
+    const fullName = formData.get('fullName');
+    const nameParts = fullName.split(' ');
+    
+    if (nameParts.length >= 2) {
+        ime = nameParts[0]; // First part is the first name
+        prezime = nameParts.slice(1).join(' '); // Join the rest as the last name
+    } else {
+        alert("Морате унести Ваше пуно име и презиме.");
+        return;
+    }
+    
+    const korisnicko_ime = formData.get('username');
     const email = formData.get('email');
     const lozinka = formData.get('password');
     const potvrdaLozinke = formData.get('confirm-password');
@@ -15,14 +24,13 @@ async function kreirajKorisnika(event) {
         alert("Лозинке се не поклапају.");
         return;
     }
-
     try {
         const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ korisnickoIme, lozinka, ime, prezime, email })
+            body: JSON.stringify({ korisnicko_ime, lozinka, ime, prezime, email })
         });
 
         const data = await response.json();
@@ -30,12 +38,19 @@ async function kreirajKorisnika(event) {
         if (data.status === 'success') {
             window.location.href = 'login.php';
         } else {
-            alert("Регисрација неуспешна. Молим Вас покушајте поново.");
+            // Handle different types of errors based on the message from the server
+            if (data.message === "Username already exists") {
+                alert("Корисничко име већ постоји. Молим Вас изаберите друго.");
+            } else if (data.message === "Email already exists") {
+                alert("Е-маил већ постоји у систему. Молим Вас користите други е-маил.");
+            } else {
+                alert("Регистрација неуспешна. Молим Вас покушајте поново.");
+            }
         }
 
     } catch (error) {
         console.error('Greška:', error);
-        alert("Дошло је до грешке.");
+        alert("Дошло је до грешке приликом комуникације са сервером.");
     }
 }
 

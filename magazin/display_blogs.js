@@ -23,6 +23,13 @@ if (openModalButton != null) {
     });
 }
 
+const toggleDropdown = () => {
+    const dropdown = document.getElementById("dropdown");
+    dropdown.classList.toggle("hidden");
+};
+
+document.getElementById("dropdown-button").addEventListener('click', toggleDropdown);
+
 async function getAllBlogPosts() {
     const apiUrl = 'http://мајндивелопмент.срб/DB/get_blogs.php'; // Replace with your actual API URL
 

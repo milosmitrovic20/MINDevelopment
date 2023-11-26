@@ -61,7 +61,7 @@
         </nav>
     </header>
     
-    <div class="h-screen mb-12" style="background-image: url('../images/tamnosvetlo.svg');" id="blogContainer"></div>
+    <div class="mb-12" style="background-image: url('../images/tamnosvetlo.svg');" id="blogContainer"></div>
 
   
     

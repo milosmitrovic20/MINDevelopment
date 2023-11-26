@@ -184,23 +184,6 @@ session_start();
                     </li>
                 </ul>
             </div>
-            <div>
-                <h2 class="mb-6 text-sm font-semibold text-text uppercase">Лорем ипсум</h2>
-                <ul class="text-text font-medium">
-                    <li class="mb-4">
-                        <a href="#" class="hover:underline">Један</a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="#" class="hover:underline">Два</a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="#" class="hover:underline">Три</a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="#" class="hover:underline">Четири</a>
-                    </li>
-                </ul>
-            </div>
         </div>
         <div class="bg-secondary h-0.5 w-full"></div>
         <div class="px-4 py-6 md:flex md:items-center md:justify-between">

@@ -1,15 +1,18 @@
-async function createUser(event) {
+async function kreirajKorisnika(event) {
     event.preventDefault();
 
     const apiUrl = 'http://мајндивелопмент.срб/DB/create_user.php';
     const formData = new FormData(event.target);
 
+    const ime = formData.get('firstName');
+    const prezime = formData.get('lastName');
+    const korisnickoIme = formData.get('username');
     const email = formData.get('email');
-    const password = formData.get('password');
-    const confirmPassword = formData.get('confirm-password');
+    const lozinka = formData.get('password');
+    const potvrdaLozinke = formData.get('confirm-password');
 
-    if (password !== confirmPassword) {
-        alert("Passwords don't match.");
+    if (lozinka !== potvrdaLozinke) {
+        alert("Lozinke se ne poklapaju.");
         return;
     }
 
@@ -19,7 +22,7 @@ async function createUser(event) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ username: email, password: password, email: email })
+            body: JSON.stringify({ korisnickoIme, lozinka, ime, prezime, email })
         });
 
         const data = await response.json();
@@ -27,14 +30,14 @@ async function createUser(event) {
         if (data.status === 'success') {
             window.location.href = 'login.php';
         } else {
-            alert(data.message || "Пријављивање неуспешно. Молим Вас покушајте поново.");
+            alert(data.message || "Registracija neuspešna. Molim Vas pokušajte ponovo.");
         }
 
     } catch (error) {
-        console.error('Error:', error);
-        alert("Дошло је до грешке.");
+        console.error('Greška:', error);
+        alert("Došlo je do greške.");
     }
 }
 
-const signupForm = document.querySelector('form');
-signupForm.addEventListener('submit', createUser);
+const formularZaRegistraciju = document.querySelector('form');
+formularZaRegistraciju.addEventListener('submit', kreirajKorisnika);

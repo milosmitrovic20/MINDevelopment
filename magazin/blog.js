@@ -73,8 +73,8 @@ function displayBlogDetails(blogDetails, comments) {
         <article class="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
             <footer class="flex justify-between items-center mb-2">
                 <div class="flex items-center">
-                    <p class="inline-flex items-center mr-3 font-semibold text-sm text-gray-900 dark:text-white">${comments.korisnik_id}</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">${comments.datum_komentara}</p>
+                    <p class="inline-flex items-center mr-3 font-semibold text-sm text-gray-900 dark:text-white">${comments[i].korisnicko_ime}</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">${comments[i].datum_komentara}</p>
                 </div>
                 <button id="dropdownComment1Button" data-dropdown-toggle="dropdownComment1"
                     class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:text-gray-400 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -104,7 +104,7 @@ function displayBlogDetails(blogDetails, comments) {
                     </ul>
                 </div>
             </footer>
-            <p>${comments.tekst}</p>
+            <p>${comments[i].tekst}</p>
         </article>`;
     }
 
@@ -145,4 +145,38 @@ document.getElementById('komentarForma').addEventListener('submit', async (event
         alert("Дошло је до грешке! " + error);
     }
 });
-  
+
+// Function to handle form submission
+const handleSubmit = async (event) => {
+    event.preventDefault();
+    const email = document.getElementById('email').value;
+
+    // Your API endpoint URL
+    const apiUrl = 'http://мајндивелопмент.срб/upload_email.php';
+
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email }),
+        });
+
+        const data = await response.json();
+
+        if (data.status === 'success') {
+            // Handle success, e.g., show a success message
+            console.log(data.message);
+        } else {
+            // Handle errors, e.g., display an error message
+            console.error(data.message);
+        }
+    } catch (error) {
+        // Handle network errors or other exceptions
+        console.error('Error:', error);
+    }
+};
+
+const subscriptionForm = document.getElementById('subscriptionForm');
+subscriptionForm.addEventListener('submit', handleSubmit);

@@ -12,7 +12,7 @@ async function kreirajKorisnika(event) {
     const potvrdaLozinke = formData.get('confirm-password');
 
     if (lozinka !== potvrdaLozinke) {
-        alert("Lozinke se ne poklapaju.");
+        alert("Лозинке се не поклапају.");
         return;
     }
 
@@ -30,12 +30,12 @@ async function kreirajKorisnika(event) {
         if (data.status === 'success') {
             window.location.href = 'login.php';
         } else {
-            alert(data.message || "Registracija neuspešna. Molim Vas pokušajte ponovo.");
+            alert("Регисрација неуспешна. Молим Вас покушајте поново.");
         }
 
     } catch (error) {
         console.error('Greška:', error);
-        alert("Došlo je do greške.");
+        alert("Дошло је до грешке.");
     }
 }
 

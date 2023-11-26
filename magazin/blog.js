@@ -16,6 +16,33 @@ async function fetchBlogDetailsAndComments() {
             // Additional code to handle success:
             // Display blog details and comments on the page
             displayBlogDetails(data.data.blogDetails, data.data.comments);
+            // stavi event listener kad napravi formu za komentare tek
+            document.getElementById('komentarForma').addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                const commentText = document.getElementById('comment').value;
+                const apiUrl = 'http://мајндивелопмент.срб/DB/create_comment.php';
+
+                try {
+                    const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ blogId, tekst: commentText }),
+                    });
+
+                    const data = await response.json();
+
+                    if (data.status === 'success') {
+                        console.log(data.message);
+                    } else {
+                        alert("Дошло је до грешке! " + data.message);
+                    }
+                } catch (error) {
+                    alert("Дошло је до грешке! " + error);
+                }
+            });
         } else {
             console.error(data.message);
             // Additional code to handle errors (e.g., display error message to user)
@@ -54,7 +81,7 @@ function displayBlogDetails(blogDetails, comments) {
                     <div class="flex justify-between items-center mb-6">
                         <h2 class="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Discussion</h2>
                     </div>
-                    <form class="mb-6">
+                    <form class="mb-6" id="komentarForma">
                         <div class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
                             <label for="comment" class="sr-only">Your comment</label>
                             <textarea id="comment" rows="6"
@@ -119,38 +146,12 @@ function displayBlogDetails(blogDetails, comments) {
     blogContainer.innerHTML = htmlContent;
 }
 
-document.getElementById('komentarForma').addEventListener('submit', async (event) => {
-    event.preventDefault();
+document.getElementById("subscribeButton").addEventListener("click", async (event) => {
+    console.log("NAJJAACI");
+    const emailInput = document.getElementById("email");
+    const email = emailInput.value;
+    if (!email) { return; }
 
-    const commentText = document.getElementById('comment').value;
-    const apiUrl = 'http://мајндивелопмент.срб/DB/create_comment.php';
-
-    try {
-        const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ blogId, tekst: commentText }),
-        });
-
-        const data = await response.json();
-
-        if (data.status === 'success') {
-            console.log(data.message);
-        } else {
-            alert("Дошло је до грешке! " + data.message);
-        }
-    } catch (error) {
-        alert("Дошло је до грешке! " + error);
-    }
-});
-
-document.getElementById('subscriptionForm').addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const email = document.getElementById('email').value;
-
-    // Your API endpoint URL
     const apiUrl = 'http://мајндивелопмент.срб/DB/upload_email.php';
 
     try {
@@ -171,6 +172,7 @@ document.getElementById('subscriptionForm').addEventListener('submit', async (ev
             // Handle errors, e.g., display an error message
             console.error(data.message);
         }
+        emailInput.value = '';
     } catch (error) {
         // Handle network errors or other exceptions
         console.error('Error:', error);

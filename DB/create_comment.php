@@ -1,10 +1,10 @@
 <?php
-session_start(); // Pokretanje sesije
+session_start(); 
 header('Content-Type: application/json');
 include 'db_conn.php';
 
 function createComment($pdo, $blogId, $tekst) {
-    $korisnikId = $_SESSION['userID']; // Dohvatanje userID iz sesije
+    $korisnikId = $_SESSION['userID'];
 
     $sql = "INSERT INTO komentari (blog_id, korisnik_id, tekst) VALUES (?, ?, ?)";
 
@@ -20,7 +20,6 @@ function createComment($pdo, $blogId, $tekst) {
 $input = json_decode(file_get_contents('php://input'), true);
 
 if ($input && isset($input['blogId'], $input['tekst'])) {
-    // Provera da li je korisnik ulogovan
     if (!isset($_SESSION['userID'])) {
         echo json_encode(["status" => "error", "message" => "Корисник није улогован!"]);
         exit;

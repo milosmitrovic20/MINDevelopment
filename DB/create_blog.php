@@ -1,10 +1,10 @@
 <?php
-session_start(); // Start the session
+session_start();
 header('Content-Type: application/json');
 include 'db_conn.php';
 
 function createBlogPost($pdo, $naslov, $sadrzaj, $kategorija) {
-    $korisnikId = $_SESSION['userID']; // Get userID from session
+    $korisnikId = $_SESSION['userID'];
 
     $sql = "INSERT INTO blog (korisnik_id, naslov, sadrzaj, kategorija) VALUES (?, ?, ?, ?)";
 
@@ -20,7 +20,6 @@ function createBlogPost($pdo, $naslov, $sadrzaj, $kategorija) {
 $input = json_decode(file_get_contents('php://input'), true);
 
 if ($input && isset($input['naslov'], $input['sadrzaj'], $input['kategorija'])) {
-    // Check if the user is logged in
     if (!isset($_SESSION['userID'])) {
         echo json_encode(["status" => "error", "message" => "Корисник није улогован!"]);
         exit;

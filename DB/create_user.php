@@ -11,10 +11,8 @@ function createUser($pdo, $korisnicko_ime, $lozinka, $ime, $prezime, $email) {
         $stmt->execute([$korisnicko_ime, $hashedPassword, $ime, $prezime, $email]);
         return ["status" => "success", "message" => "User successfully created"];
     } catch (PDOException $e) {
-        // Check if the error is due to a duplicate entry
         $errorInfo = $e->errorInfo;
         if (isset($errorInfo[1]) && $errorInfo[1] == 1062) {
-            // Check if the duplicate entry is for korisnicko_ime or email
             if (strpos($errorInfo[2], "'korisnicko_ime'") !== false) {
                 return ["status" => "error", "message" => "Username already exists"];
             } elseif (strpos($errorInfo[2], "'email'") !== false) {

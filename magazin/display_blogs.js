@@ -1,7 +1,7 @@
 let modal = document.getElementById('defaultModal');
 let openModalButton = document.getElementById('defaultModalButton');
 let closeModalButton = document.getElementById('closeModal');
-let form = document.querySelector('form'); // Select the form element
+let form = document.querySelector('form');
 let overlay = document.getElementById('overlay');
 
 function toggleModal() {
@@ -31,14 +31,14 @@ const toggleDropdown = () => {
 document.getElementById("dropdown-button").addEventListener('click', toggleDropdown);
 
 async function getAllBlogPosts() {
-    const apiUrl = 'http://мајндивелопмент.срб/DB/get_blogs.php'; // Replace with your actual API URL
+    const apiUrl = 'http://мајндивелопмент.срб/DB/get_blogs.php'; 
 
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
 
         if (data.status === 'success') {
-            const blogContainer = document.querySelector('.grid'); // Assuming this is your grid container
+            const blogContainer = document.querySelector('.grid'); 
 
             data.data.forEach(blog => {
                 const blogElement = createBlogPostHTML(blog);
@@ -64,11 +64,11 @@ function createBlogPostHTML(blog) {
             <h2 class="mb-2 text-2xl font-bold tracking-tight text-white">
                 <a href="#">${blog.naslov}</a> <!-- Displaying title -->
             </h2>
-            <p class="line-clamp-3 mb-5 font-light text-text">${blog.sadrzaj}</p> <!-- Displaying content -->
+            <p class="line-clamp-3 mb-5 font-light text-gray-400">${blog.sadrzaj}</p> <!-- Displaying content -->
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-4">
-                    <img class="w-7 h-7 rounded-full" src="../images/ikone/${blog.autor_slika}.png" alt="Author avatar" />
-                    <span class="font-medium text-white"> ${blog.autor_korisnicko_ime} </span>
+                ${blog.autor_slika ? `<img class="w-7 h-7 rounded-full" src="../images/ikone/${blog.autor_slika}.png" alt="Author avatar" />` : ''}
+                <span class="font-medium text-white"> ${blog.autor_korisnicko_ime} </span>
                 </div>
                 <a href="blog.html?blogId=${blog.blog_id}" class="inline-flex items-center font-medium text-primary hover:underline">
                     Read more
@@ -106,9 +106,15 @@ document.getElementById('blogForm').addEventListener('submit', async function(ev
             console.log(data.message);
             toggleModal(); 
 
-            // Create and display the new blog post
-            const newBlogHTML = createBlogPostHTML({ naslov, sadrzaj, kategorija });
-            blogContainer.innerHTML = newBlogHTML + blogContainer.innerHTML;
+            const noviBlog = {
+                naslov: naslov, 
+                sadrzaj: sadrzaj, 
+                kategorija: kategorija,
+                autor_korisnicko_ime: "Ви",
+                datum_objave: new Date().toISOString() // Use current date-time
+            };
+            const noviBlogHTML = createBlogPostHTML(noviBlog);
+            blogContainer.innerHTML = noviBlogHTML + blogContainer.innerHTML;
         } else if (data.status === 'error' && data.message === 'Корисник није улогован!') {
             alert("Морате се улоговати да бисте направили блог!");
         } else {

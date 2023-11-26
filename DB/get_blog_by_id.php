@@ -10,7 +10,6 @@ if (!$blogId) {
 }
 
 try {
-    // Fetch blog details
     $blogSql = "SELECT * FROM blog WHERE blog_id = ?";
     $blogStmt = $pdo->prepare($blogSql);
     $blogStmt->execute([$blogId]);
@@ -21,7 +20,6 @@ try {
         exit;
     }
 
-    // Fetch author details from korisnici table
     $authorSql = "SELECT korisnici.ime, korisnici.prezime, korisnici.korisnicko_ime, korisnici.slika
                   FROM korisnici
                   WHERE korisnici.korisnik_id = ?";
@@ -29,7 +27,6 @@ try {
     $authorStmt->execute([$blog['korisnik_id']]);
     $author = $authorStmt->fetch(PDO::FETCH_ASSOC);
 
-    // Fetch comments
     $commentSql = "SELECT komentari.komentar_id, komentari.tekst, komentari.datum_komentara, korisnici.korisnicko_ime
                     FROM komentari
                     INNER JOIN korisnici ON komentari.korisnik_id = korisnici.korisnik_id

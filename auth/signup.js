@@ -25,7 +25,7 @@ async function createUser(event) {
         const data = await response.json();
 
         if (data.status === 'success') {
-            window.location.href = 'login.html';
+            window.location.href = 'login.php';
         } else {
             alert(data.message || "Пријављивање неуспешно. Молим Вас покушајте поново.");
         }

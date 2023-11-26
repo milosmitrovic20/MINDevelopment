@@ -1,15 +1,17 @@
 <?php
+session_start();
 header('Content-Type: application/json');
 include 'db_conn.php';
 
 function verifyUser($pdo, $identifier, $password) {
     // Check both username and email fields
-    $sql = "SELECT lozinka FROM korisnici WHERE korisnicko_ime = ? OR email = ?";
+    $sql = "SELECT id, lozinka FROM korisnici WHERE korisnicko_ime = ? OR email = ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$identifier, $identifier]);
     $user = $stmt->fetch();
 
     if ($user && password_verify($password, $user['lozinka'])) {
+        $_SESSION['userID'] = $user['id'];
         return ["status" => "success", "message" => "Login successful"];
     } else {
         return ["status" => "error", "message" => "Invalid username/email or password"];

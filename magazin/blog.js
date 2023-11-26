@@ -146,8 +146,7 @@ document.getElementById('komentarForma').addEventListener('submit', async (event
     }
 });
 
-// Function to handle form submission
-const handleSubmit = async (event) => {
+document.getElementById('subscriptionForm').addEventListener('submit', async (event) => {
     event.preventDefault();
     const email = document.getElementById('email').value;
 
@@ -176,7 +175,5 @@ const handleSubmit = async (event) => {
         // Handle network errors or other exceptions
         console.error('Error:', error);
     }
-};
+});
 
-const subscriptionForm = document.getElementById('subscriptionForm');
-subscriptionForm.addEventListener('submit', handleSubmit);

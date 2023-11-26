@@ -7,7 +7,7 @@
     <link rel="icon" href="../images/logo.svg" type="image/icon">
     <link href="../dist/output.css" rel="stylesheet">
 </head>
-<body background="../images/tamnosvetlo.svg">
+<body class="bg-background">
     <header>
         <nav class="border-gray-200 px-4 lg:px-6 py-2.5">
             <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
@@ -50,8 +50,11 @@
         </nav>
     </header>
     
-    <div class="h-screen" id="blogContainer"></div>
+    <div class="h-screen" style="background-image: url('../images/tamnosvetlo.svg');" id="blogContainer"></div>
+
+    <section class="h-screen rotate-180 -z-10" style="background-image: url('../images/tamnosvetlo.svg');"></section>
   
+    
     <section>
         <div class="py-8 px-4 mx-auto bg-background lg:py-16 lg:px-6">
             <div class="mx-auto max-w-screen-md sm:text-center">

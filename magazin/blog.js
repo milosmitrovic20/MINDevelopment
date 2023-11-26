@@ -59,7 +59,7 @@ function displayBlogDetails(blogDetails, comments, author) {
     const blogContainer = document.querySelector('#blogContainer');
 
     let htmlContent = `
-    <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 antialiased">
+    <main class="pt-8 pb-16 h-screen overflow-auto lg:pt-16 lg:pb-24 antialiased">
         <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
             <article class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
                 <header class="mb-4 lg:mb-6 not-format">
@@ -91,13 +91,14 @@ function displayBlogDetails(blogDetails, comments, author) {
                             class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-secondary bg-primary hover:bg-primary-hover rounded-lg ">
                             Објави коментар
                         </button>
-                    </form>`;
+                    </form>
+                    <div class="commentsSection overflow-auto">`;
 
     for (let i = 0; i < comments.length; i++) {
         htmlContent += createCommentHTML(comments[i]);
     }
 
-    htmlContent += `
+    htmlContent += ` </div>
                 </section>
             </article>
         </div>
@@ -114,14 +115,6 @@ function createCommentHTML(comment) {
                 <p class="inline-flex items-center mr-3 font-semibold text-sm text-gray-900 dark:text-white">${comment.korisnicko_ime}</p>
                 <p class="text-sm text-gray-600 dark:text-gray-400">${comment.datum_komentara}</p>
             </div>
-            <button id="dropdownComment1Button" data-dropdown-toggle="dropdownComment1"
-                class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:text-gray-400 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                type="button">
-                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
-                    <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/>
-                </svg>
-                <span class="sr-only">Comment settings</span>
-            </button>
             <div id="dropdownComment1"
                 class="hidden z-10 w-36 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                 <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"

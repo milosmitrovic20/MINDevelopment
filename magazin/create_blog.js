@@ -1,5 +1,22 @@
+let modal = document.getElementById('defaultModal');
+let openModalButton = document.getElementById('defaultModalButton');
+let closeModalButton = document.getElementById('closeModal');
+
+function toggleModal() {
+    modal.classList.toggle('hidden');
+    modal.classList.toggle('flex');
+}
+
+openModalButton.addEventListener('click', function() {
+    toggleModal();
+});
+
+closeModalButton.addEventListener('click', function() {
+    toggleModal();
+});
+
 async function createBlogPost(korisnikId, naslov, sadrzaj) {
-    const apiUrl = 'http://мајндивелопмент.срб/DB/create_blog.php'; // Replace with your actual API URL
+    const apiUrl = 'http://мајндивелопмент.срб/DB/create_blog.php'; 
 
     try {
         const response = await fetch(apiUrl, {
@@ -20,9 +37,8 @@ async function createBlogPost(korisnikId, naslov, sadrzaj) {
         }
 
     } catch (error) {
-        console.error('Error:', error); // Handle the error
+        console.error('Error:', error);
     }
 }
 
-// Example usage
 createBlogPost(1, 'Sample Blog Title', 'This is the content of the blog.');

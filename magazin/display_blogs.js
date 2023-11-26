@@ -57,14 +57,14 @@ function createBlogPostHTML(blog) {
         <article class="p-6 bg-secondary rounded-lg border shadow-md border-secondary">
             <div class="flex justify-between items-center mb-5 text-gray-500">
                 <span class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
-                    ${blog.kategorija} <!-- Displaying category -->
+                    ${blog.kategorija}
                 </span>
-                <span class="text-sm">${new Date(blog.datum_objave).toLocaleDateString()}</span> <!-- Displaying current date -->
+                <span class="text-sm">${new Date(blog.datum_objave).toLocaleDateString()}</span>
             </div>
             <h2 class="mb-2 text-2xl font-bold tracking-tight text-white">
-                <a href="#">${blog.naslov}</a> <!-- Displaying title -->
+                <a href="#">${blog.naslov}</a>
             </h2>
-            <p class="line-clamp-3 mb-5 font-light text-gray-400">${blog.sadrzaj}</p> <!-- Displaying content -->
+            <p class="line-clamp-3 mb-5 font-light text-gray-400">${blog.sadrzaj}</p>
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-4">
                 ${blog.autor_slika ? `<img class="w-7 h-7 rounded-full" src="../images/ikone/${blog.autor_slika}.png" alt="Author avatar" />` : ''}

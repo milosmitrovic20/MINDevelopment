@@ -105,7 +105,6 @@ function displayBlogDetails(blogDetails, comments, author) {
                     </svg>
                     <span class="sr-only">Comment settings</span>
                 </button>
-                <!-- Dropdown menu -->
                 <div id="dropdownComment1"
                     class="hidden z-10 w-36 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                     <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"

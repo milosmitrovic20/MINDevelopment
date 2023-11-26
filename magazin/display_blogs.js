@@ -106,10 +106,6 @@ document.getElementById('blogForm').addEventListener('submit', async function(ev
             console.log(data.message);
             toggleModal(); 
 
-<<<<<<< HEAD
-            const newBlogHTML = createBlogPostHTML({ naslov, sadrzaj, kategorija });
-            blogContainer.innerHTML = newBlogHTML + blogContainer.innerHTML;
-=======
             const noviBlog = {
                 naslov: naslov, 
                 sadrzaj: sadrzaj, 
@@ -119,7 +115,6 @@ document.getElementById('blogForm').addEventListener('submit', async function(ev
             };
             const noviBlogHTML = createBlogPostHTML(noviBlog);
             blogContainer.innerHTML = noviBlogHTML + blogContainer.innerHTML;
->>>>>>> 77434c538c5958d6b8185ed5957c381628ee4cce
         } else if (data.status === 'error' && data.message === 'Корисник није улогован!') {
             alert("Морате се улоговати да бисте направили блог!");
         } else {

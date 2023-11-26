@@ -2,19 +2,24 @@ let modal = document.getElementById('defaultModal');
 let openModalButton = document.getElementById('defaultModalButton');
 let closeModalButton = document.getElementById('closeModal');
 let form = document.querySelector('form'); // Select the form element
+let overlay = document.getElementById('overlay');
 
 function toggleModal() {
+    overlay.classList.toggle('hidden');
     modal.classList.toggle('hidden');
+    overlay.classList.toggle('absolute');
     modal.classList.toggle('flex');
 }
 
 if (openModalButton != null) {
     openModalButton.addEventListener('click', function() {
         toggleModal();
+        document.body.style.overflow = 'hidden';
     });
     
     closeModalButton.addEventListener('click', function() {
         toggleModal();
+        document.body.style.overflow = 'visible';
     });
 }
 

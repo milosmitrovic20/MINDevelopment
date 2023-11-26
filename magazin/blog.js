@@ -151,7 +151,7 @@ document.getElementById('subscriptionForm').addEventListener('submit', async (ev
     const email = document.getElementById('email').value;
 
     // Your API endpoint URL
-    const apiUrl = 'http://мајндивелопмент.срб/upload_email.php';
+    const apiUrl = 'http://мајндивелопмент.срб/DB/upload_email.php';
 
     try {
         const response = await fetch(apiUrl, {

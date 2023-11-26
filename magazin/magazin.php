@@ -27,7 +27,10 @@ session_start();
                         <form action="../DB/logout.php" method="post">
                             <button type="submit" name="logout" class="text-primary bg-transparent hover:text-primary-hover font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">Одјави се</button>
                         </form>
-                        <a href="create_blog.html" class="text-secondary bg-primary hover:bg-primary-hover font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">Креирај блог</a>
+                        <button id="defaultModalButton" data-modal-target="defaultModal" data-modal-toggle="defaultModal" class="block text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" type="button">
+                            Креирај блог
+                        </button>
+                        <a href="create_blog.html" class="text-secondary bg-primary hover:bg-primary-hover font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2"></a>
 
                     <?php
                     } else {
@@ -190,6 +193,48 @@ session_start();
             </div>  
         </div>
     </section>
+
+    <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+        <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+            <div class="relative p-4 bg-background rounded-lg shadow sm:p-5">
+                <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                        Постави блог
+                    </h3>
+                    <button id="closeModal" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
+                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <form action="#">
+                    <div class="grid gap-4 mb-4 sm:grid-cols-2">
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium text-text">Наслов</label>
+                            <input type="text" name="name" id="name" class="bg-secondary text-gray-400 text-sm rounded-lg block w-full p-2.5" placeholder="Наслов блога" required="">
+                        </div>
+                        <div>
+                            <label for="category" class="block mb-2 text-sm font-medium text-text">Категорија</label>
+                            <select id="category" class="bg-secondary text-gray-400 text-sm rounded-lg block w-full p-2">
+                                <option selected="">Изабери категорију</option>
+                                <option value="TV">TВ/Монитори</option>
+                                <option value="PC">ПЦ</option>
+                                <option value="GA">Гејминг/Конзоле</option>
+                                <option value="PH">Телефони</option>
+                            </select>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label for="description" class="block mb-2 text-sm font-medium text-text">Садржај</label>
+                            <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-400 bg-secondary rounded-lg" placeholder="Садржај блога"></textarea>                    
+                        </div>
+                    </div>
+                    <button type="submit" class="text-white inline-flex items-center bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                        <svg class="mr-1 -ml-1 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                        Постави нови блог
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <footer class="bg-background">
         <div class="mx-auto w-full max-w-screen-xl">

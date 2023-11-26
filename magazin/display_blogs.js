@@ -1,3 +1,21 @@
+let modal = document.getElementById('defaultModal');
+let openModalButton = document.getElementById('defaultModalButton');
+let closeModalButton = document.getElementById('closeModal');
+let form = document.querySelector('form'); // Select the form element
+
+function toggleModal() {
+    modal.classList.toggle('hidden');
+    modal.classList.toggle('flex');
+}
+
+openModalButton.addEventListener('click', function() {
+    toggleModal();
+});
+
+closeModalButton.addEventListener('click', function() {
+    toggleModal();
+});
+
 async function getAllBlogPosts() {
     const apiUrl = 'http://мајндивелопмент.срб/DB/get_blogs.php'; // Replace with your actual API URL
 

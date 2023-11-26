@@ -17,7 +17,7 @@ async function loginUser(event) {
 
         const data = await response.json();
         if (data.status === 'success') {
-            window.location.href = 'http://мајндивелопмент.срб/magazin/magazin.html';
+            window.location.href = 'http://мајндивелопмент.срб/magazin/magazin.php';
         } else {
             alert("Погрешна шифра или корисничко име!");
         }

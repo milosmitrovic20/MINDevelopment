@@ -80,6 +80,26 @@ async function getAllBlogPosts() {
 
 getAllBlogPosts();
 
+function createBlogPostHTML(blog) {
+    const currentDate = new Date().toLocaleDateString();
+    
+    return `
+        <article class="p-6 bg-secondary rounded-lg border shadow-md border-secondary">
+            <div class="flex justify-between items-center mb-5 text-gray-500">
+                <span class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
+                    ${blog.kategorija} <!-- Displaying category -->
+                </span>
+                <span class="text-sm">${currentDate}</span> <!-- Displaying current date -->
+            </div>
+            <h2 class="mb-2 text-2xl font-bold tracking-tight text-white">
+                <a href="#">${blog.naslov}</a> <!-- Displaying title -->
+            </h2>
+            <p class="line-clamp-3 mb-5 font-light text-text">${blog.sadrzaj}</p> <!-- Displaying content -->
+            <!-- Additional blog details here (e.g., author name, read more link) -->
+        </article>
+    `;
+}
+
 document.getElementById('blogForm').addEventListener('submit', async function(event) {
     event.preventDefault();
 
@@ -88,6 +108,7 @@ document.getElementById('blogForm').addEventListener('submit', async function(ev
     let sadrzaj = document.getElementById('description').value;
 
     const apiUrl = 'http://мајндивелопмент.срб/DB/create_blog.php';
+    const blogContainer = document.querySelector('.grid');
 
     try {
         const response = await fetch(apiUrl, {
@@ -102,6 +123,10 @@ document.getElementById('blogForm').addEventListener('submit', async function(ev
         if (data.status === 'success') {
             console.log(data.message);
             toggleModal(); 
+
+            // Create and display the new blog post
+            const newBlogHTML = createBlogPostHTML({ naslov, sadrzaj, kategorija });
+            blogContainer.innerHTML = newBlogHTML + blogContainer.innerHTML;
         } else if (data.status === 'error' && data.message === 'Корисник није улогован!') {
             alert("Морате се улоговати да бисте направили блог!");
         } else {

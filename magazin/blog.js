@@ -56,15 +56,6 @@ async function fetchBlogDetailsAndComments(blogId) {
 function displayBlogDetails(blogDetails, comments) {
     const blogContainer = document.querySelector('#blogContainer');
 
-    
-
-    // Update the inner HTML of the blog container
-    blogContainer.innerHTML = htmlContent;
-}
-
-function displayBlogDetails(blogDetails, comments) {
-    const blogContainer = document.querySelector('#blogContainer');
-
     // Start with the main HTML structure
     const htmlContent = `
     <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 antialiased">

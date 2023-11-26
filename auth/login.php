@@ -32,7 +32,7 @@ if (isset($_SESSION['userID'])) {
                     <form action="#">
                         <div class="mb-4">
                             <label for="email" class="block mb-2 text-sm font-medium text-text">Корисничко име или мејл</label>
-                            <input required type="email" name="email" id="email" class="text-text sm:text-sm rounded-lg block w-full p-2.5 bg-secondary placeholder-gray-400" placeholder="Петар Петровић" required="">
+                            <input required name="username" id="username" class="text-text sm:text-sm rounded-lg block w-full p-2.5 bg-secondary placeholder-gray-400" placeholder="Петар Петровић" required="">
                         </div>
                         <div class="lg: mb-2">
                             <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Лозинка</label>

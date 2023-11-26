@@ -3,7 +3,7 @@ async function loginUser(event) {
 
     const apiUrl = 'http://мајндивелопмент.срб/DB/login.php';
     const formData = new FormData(event.target);
-    const username = formData.get('email');
+    const username = formData.get('username');
     const password = formData.get('password');
 
     try {

@@ -61,9 +61,8 @@
         </nav>
     </header>
     
-    <div class="h-screen" style="background-image: url('../images/tamnosvetlo.svg');" id="blogContainer"></div>
+    <div class="h-screen mb-12" style="background-image: url('../images/tamnosvetlo.svg');" id="blogContainer"></div>
 
-    <section class="h-screen rotate-180 -z-10" style="background-image: url('../images/tamnosvetlo.svg');"></section>
   
     
     <section>

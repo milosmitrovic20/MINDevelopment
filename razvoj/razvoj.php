@@ -61,7 +61,7 @@
     <section class="h-screen sm:h-[75vh] flex flex-col items-center text-center justify-start mb-16">
         <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
             <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-white">Развој</h2>
-            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">We use an agile approach to test assumptions and connect with the needs of your audience early and often.</p>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">Сервис који омогућава конверзију латинице у ћирилицу</p>
         </div> 
         <div class="flex space-y-10 sm:space-y-0 p-4 sm:px-0 space-x-0 sm:space-x-10 sm:flex-row max-w-screen-xl items-start justify-center mx-auto w-full flex-col">
             <textarea type="text" class="p-4 bg-secondary resize-none w-full h-64 sm:w-2/5 justify-start items-start text-justify text-text placeholder:text-gray-400 border border-accent rounded-md" id="latinicaInput" placeholder="Унесите латиницу овде"></textarea>

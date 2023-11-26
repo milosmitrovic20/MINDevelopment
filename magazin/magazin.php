@@ -235,7 +235,7 @@ session_start();
                         <span class="sr-only">Close modal</span>
                     </button>
                 </div>
-                <form action="#">
+                <form id="blogForm" action="#">
                     <div class="grid gap-4 mb-4 sm:grid-cols-2">
                         <div>
                             <label for="name" class="block mb-2 text-sm font-medium text-text">Наслов</label>
@@ -244,8 +244,7 @@ session_start();
                         <div>
                             <label for="category" class="block mb-2 text-sm font-medium text-text">Категорија</label>
                             <select id="category" class="bg-secondary text-gray-400 text-sm rounded-lg block w-full p-2">
-                                <option selected="">Изабери категорију</option>
-                                <option value="блог">Блог</option>
+                                <option selected value="блог">Блог</option>
                                 <option value="туторијал">Туторијал</option>
                                 <option value="вест">Вест</option>
                             </select>

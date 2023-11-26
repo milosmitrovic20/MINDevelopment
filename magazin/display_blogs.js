@@ -79,3 +79,35 @@ async function getAllBlogPosts() {
 }
 
 getAllBlogPosts();
+
+document.getElementById('blogForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    let naslov = document.getElementById('name').value;
+    let kategorija = document.getElementById('category').value;
+    let sadrzaj = document.getElementById('description').value;
+
+    const apiUrl = 'http://мајндивелопмент.срб/DB/create_blog.php';
+
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ naslov, sadrzaj, kategorija })
+        });
+
+        const data = await response.json();
+        if (data.status === 'success') {
+            console.log(data.message);
+            toggleModal(); 
+        } else if (data.status === 'error' && data.message === 'Корисник није улогован!') {
+            alert("Морате се улоговати да бисте направили блог!");
+        } else {
+            console.log(data.message);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+});

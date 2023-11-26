@@ -38,16 +38,16 @@
                 <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                     <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                         <li>
-                            <a href="../index.html" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text rounded lg:p-0">Почетна</a>
+                            <a href="../index.php" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text rounded lg:p-0">Почетна</a>
                         </li>
                         <li>
                             <a href="" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-accent lg:p-0" aria-current="page">Развој</a>
                         </li>
                         <li>
-                            <a href="../dizajn/dizajn.html" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Дизајн</a>
+                            <a href="../dizajn/dizajn.php" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Дизајн</a>
                         </li>
                         <li>
-                            <a href="../dizajn/dizajn.html" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Ресурси</a>
+                            <a href="../dizajn/dizajn.php" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Ресурси</a>
                         </li>
                         <li>
                             <a href="../magazin/magazin.php" class="block py-2 pr-4 pl-3 text-text transition duration-300 transform hover:scale-110 lg:border-0 lg:p-0" >Магазин</a>
@@ -61,7 +61,7 @@
     <section class="h-screen sm:h-[75vh] flex flex-col items-center text-center justify-start mb-16">
         <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
             <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-white">Развој</h2>
-            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">We use an agile approach to test assumptions and connect with the needs of your audience early and often.</p>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">Сервис који омогућава конверзију латинице у ћирилицу</p>
         </div> 
         <div class="flex space-y-10 sm:space-y-0 p-4 sm:px-0 space-x-0 sm:space-x-10 sm:flex-row max-w-screen-xl items-start justify-center mx-auto w-full flex-col">
             <textarea type="text" class="p-4 bg-secondary resize-none w-full h-64 sm:w-2/5 justify-start items-start text-justify text-text placeholder:text-gray-400 border border-accent rounded-md" id="latinicaInput" placeholder="Унесите латиницу овде"></textarea>
@@ -88,13 +88,13 @@
                 <h2 class="mb-6 text-sm font-semibold text-text uppercase">Навигација</h2>
                 <ul class="text-text font-medium">
                     <li class="mb-4">
-                        <a href="../razvoj/razvoj.html" class=" hover:underline">Развој</a>
+                        <a href="../razvoj/razvoj.php" class=" hover:underline">Развој</a>
                     </li>
                     <li class="mb-4">
-                        <a href="../dizajn/dizajn.html" class="hover:underline">Дизајн</a>
+                        <a href="../dizajn/dizajn.php" class="hover:underline">Дизајн</a>
                     </li>
                     <li class="mb-4">
-                        <a href="../resursi/resursi.html" class="hover:underline">Ресурси</a>
+                        <a href="../resursi/resursi.php" class="hover:underline">Ресурси</a>
                     </li>
                     <li class="mb-4">
                         <a href="../magazin/magazin.php" class="hover:underline">Магазин</a>
@@ -111,7 +111,7 @@
                         <a href="https://chat.whatsapp.com/EmDasBZ6BOx6eSh7O85lIf" class="hover:underline">Whatsapp</a>
                     </li>
                     <li class="mb-4">
-                        <a href="../magazin/blog.html" class="hover:underline">Блог</a>
+                        <a href="../magazin/blog.php" class="hover:underline">Блог</a>
                     </li>
                 </ul>
             </div>
@@ -135,7 +135,7 @@
         </div>
         <div class="bg-secondary h-0.5 w-full"></div>
         <div class="px-4 py-6 md:flex md:items-center md:justify-between">
-            <span class="text-sm text-gray-500">© 2023 <a href="../index.html">Ћирилко™</a>. Сва права задржана.
+            <span class="text-sm text-gray-500">© 2023 <a href="../index.php">Ћирилко™</a>. Сва права задржана.
             </span>
         </div>
     </footer>

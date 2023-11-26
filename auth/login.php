@@ -18,7 +18,7 @@ if (isset($_SESSION['userID'])) {
 <body background="../images/svetlotamno.svg">
     <section>
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-            <a href="../index.html" class="flex items-center mb-4 text-2xl font-semibold text-text">
+            <a href="../index.php" class="flex items-center mb-4 text-2xl font-semibold text-text">
                 <img class="w-8 h-8 mr-2" src="../images/logo.svg" alt="Ћирилко лого">
                 Ћирилко    
             </a>

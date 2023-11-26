@@ -41,13 +41,13 @@
                             <a href="" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-accent rounded lg:p-0" aria-current="page">Почетна</a>
                         </li>
                         <li>
-                            <a href="razvoj/razvoj.html" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Развој</a>
+                            <a href="razvoj/razvoj.php" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Развој</a>
                         </li>
                         <li>
-                            <a href="dizajn/dizajn.html" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Дизајн</a>
+                            <a href="dizajn/dizajn.php" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Дизајн</a>
                         </li>
                         <li>
-                            <a href="resursi/resursi.html" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Ресурси</a>
+                            <a href="resursi/resursi.php" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Ресурси</a>
                         </li>
                         <li>
                             <a href="magazin/magazin.php" class="block py-2 pr-4 pl-3 text-text transition duration-300 transform hover:scale-110 lg:border-0 lg:p-0">Магазин</a>
@@ -149,13 +149,13 @@
                 <h2 class="mb-6 text-sm font-semibold text-text uppercase">Навигација</h2>
                 <ul class="text-text font-medium">
                     <li class="mb-4">
-                        <a href="razvoj/razvoj.html" class=" hover:underline">Развој</a>
+                        <a href="razvoj/razvoj.php" class=" hover:underline">Развој</a>
                     </li>
                     <li class="mb-4">
-                        <a href="dizajn/dizajn.html" class="hover:underline">Дизајн</a>
+                        <a href="dizajn/dizajn.php" class="hover:underline">Дизајн</a>
                     </li>
                     <li class="mb-4">
-                        <a href="resursi/resursi.html" class="hover:underline">Ресурси</a>
+                        <a href="resursi/resursi.php" class="hover:underline">Ресурси</a>
                     </li>
                     <li class="mb-4">
                         <a href="magazin/magazin.php" class="hover:underline">Магазин</a>
@@ -172,7 +172,7 @@
                         <a href="https://chat.whatsapp.com/EmDasBZ6BOx6eSh7O85lIf" class="hover:underline">Whatsapp</a>
                     </li>
                     <li class="mb-4">
-                        <a href="magazin/blog.html" class="hover:underline">Блог</a>
+                        <a href="magazin/blog.php" class="hover:underline">Блог</a>
                     </li>
                 </ul>
             </div>

@@ -91,8 +91,8 @@ session_start();
         </div>
     </section>
 
+    
     <div class="hidden bg-background opacity-70 top-0 left-0 w-full h-full z-40" id="overlay"></div>
-
     <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
         <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
             <div class="relative p-4 bg-background rounded-lg shadow sm:p-5">

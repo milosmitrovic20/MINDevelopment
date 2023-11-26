@@ -146,13 +146,12 @@ document.getElementById('komentarForma').addEventListener('submit', async (event
     }
 });
 
-// Function to handle form submission
-const handleSubmit = async (event) => {
+document.getElementById('subscriptionForm').addEventListener('submit', async (event) => {
     event.preventDefault();
     const email = document.getElementById('email').value;
 
     // Your API endpoint URL
-    const apiUrl = 'http://мајндивелопмент.срб/upload_email.php';
+    const apiUrl = 'http://мајндивелопмент.срб/DB/upload_email.php';
 
     try {
         const response = await fetch(apiUrl, {
@@ -176,7 +175,5 @@ const handleSubmit = async (event) => {
         // Handle network errors or other exceptions
         console.error('Error:', error);
     }
-};
+});
 
-const subscriptionForm = document.getElementById('subscriptionForm');
-subscriptionForm.addEventListener('submit', handleSubmit);

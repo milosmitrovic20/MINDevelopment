@@ -73,8 +73,8 @@ function displayBlogDetails(blogDetails, comments) {
         <article class="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
             <footer class="flex justify-between items-center mb-2">
                 <div class="flex items-center">
-                    <p class="inline-flex items-center mr-3 font-semibold text-sm text-gray-900 dark:text-white">${comments.korisnik_id}</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">${comments.datum_komentara}</p>
+                    <p class="inline-flex items-center mr-3 font-semibold text-sm text-gray-900 dark:text-white">${comments[i].korisnicko_ime}</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">${comments[i].datum_komentara}</p>
                 </div>
                 <button id="dropdownComment1Button" data-dropdown-toggle="dropdownComment1"
                     class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:text-gray-400 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -104,7 +104,7 @@ function displayBlogDetails(blogDetails, comments) {
                     </ul>
                 </div>
             </footer>
-            <p>${comments.tekst}</p>
+            <p>${comments[i].tekst}</p>
         </article>`;
     }
 

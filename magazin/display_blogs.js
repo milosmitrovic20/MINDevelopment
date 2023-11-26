@@ -20,7 +20,7 @@ async function getAllBlogPosts() {
                         <h2 class="mb-2 text-2xl font-bold tracking-tight text-white">
                             <a href="#">${blog.naslov}</a>
                         </h2>
-                        <p class="mb-5 font-light text-text">${blog.sadrzaj}</p>
+                        <p class="line-clamp-3 mb-5 font-light text-text">${blog.sadrzaj}</p>
                         <div class="flex justify-between items-center">
                             <div class="flex items-center space-x-4">
                                 <img class="w-7 h-7 rounded-full" src="author_avatar_url.jpg" alt="Author avatar" />

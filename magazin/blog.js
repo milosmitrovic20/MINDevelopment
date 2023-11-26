@@ -1,34 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const blogId = urlParams.get('blogId');
 
-async function postComment(blogId, commentText) {
-    const apiUrl = 'http://мајндивелопмент.срб/DB/create_comment.php';
-
-    try {
-        const response = await fetch(apiUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ blogId, tekst: commentText })
-        });
-
-        const data = await response.json();
-
-        if (data.status === 'success') {
-            console.log(data.message);
-            // Additional code to handle success (e.g., clear comment form, update comments on the page)
-        } else {
-            console.error(data.message);
-            // Additional code to handle errors (e.g., display error message to user)
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        // Additional error handling (e.g., display error message)
-    }
-}
-
-async function fetchBlogDetailsAndComments(blogId) {
+async function fetchBlogDetailsAndComments() {
     //Vraca
     const apiUrl = `http://мајндивелопмент.срб/DB/get_blog_by_id.php?blogId=${blogId}`;
 
@@ -53,11 +26,13 @@ async function fetchBlogDetailsAndComments(blogId) {
     }
 }
 
+fetchBlogDetailsAndComments();
+
 function displayBlogDetails(blogDetails, comments) {
     const blogContainer = document.querySelector('#blogContainer');
 
     // Start with the main HTML structure
-    const htmlContent = `
+    let htmlContent = `
     <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 antialiased">
         <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
             <article class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
@@ -144,10 +119,30 @@ function displayBlogDetails(blogDetails, comments) {
     blogContainer.innerHTML = htmlContent;
 }
 
+document.getElementById('komentarForma').addEventListener('submit', async (event) => {
+    event.preventDefault();
 
+    const commentText = document.getElementById('comment').value;
+    const apiUrl = 'http://мајндивелопмент.срб/DB/create_comment.php';
 
-// Call this function at the start of the page or when needed
-// Assuming blogId is available
-fetchBlogDetailsAndComments(blogId);
+    try {
+        const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ blogId, tekst: commentText }),
+        });
 
-//fetchComments(blogId);
+        const data = await response.json();
+
+        if (data.status === 'success') {
+            console.log(data.message);
+        } else {
+            alert("Дошло је до грешке! " + data.message);
+        }
+    } catch (error) {
+        alert("Дошло је до грешке! " + error);
+    }
+});
+  

@@ -47,11 +47,18 @@
         </nav>
     </header>
 
-    <section class="h-screen flex items-center text-center justify-center">
-        <h2>Латиница у ћирилицу</h2>
-        <input type="text" id="latinicaInput" placeholder="Унесите латиницу овде">
-        <button id="konvertujDugme">Конвертуј У Ћирилицу</button>
-        <input type="text" id="cirilicaOutput" placeholder="Ћирилица ће се појавити овде" readonly>
+    <section class="h-screen flex flex-col items-center text-center justify-start">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-white">Развој</h2>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">We use an agile approach to test assumptions and connect with the needs of your audience early and often.</p>
+        </div> 
+        <div class="flex space-y-10 sm:space-y-0 space-x-0 sm:space-x-10 sm:flex-row flex-col">
+            <input type="text" class="p-4 bg-secondary text-text placeholder:text-gray-400 border border-accent rounded-md" id="latinicaInput" placeholder="Унесите латиницу овде">
+            <button class="bg-primary hover:bg-primary-hover text-secondary font-medium rounded-lg text-base px-4 lg:px-5 py-2 lg:py-2.5 mr-2" id="konvertujDugme">Конвертуј У Ћирилицу</button>
+            <input type="text" id="cirilicaOutput" placeholder="Ћирилица ће се појавити овде" readonly>
+        </div>
+        <button class="bg-primary hover:bg-primary-hover text-secondary font-medium rounded-lg text-base px-4 lg:px-5 py-2 lg:py-2.5 mr-2" id="konvertujDugme">Reset</button>
+        <button class="bg-primary hover:bg-primary-hover text-secondary font-medium rounded-lg text-base px-4 lg:px-5 py-2 lg:py-2.5 mr-2" id="konvertujDugme">Kopiraj</button>
     </section>
 
 

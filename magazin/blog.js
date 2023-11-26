@@ -26,41 +26,8 @@ async function fetchBlogDetailsAndComments() {
     }
 }
 
-function displayBlogDetails(blogDetails) {
-    // Implement this function to update the HTML with blog details
-    // Example: document.querySelector('#blogTitle').textContent = blogDetails.naslov;
-}
-
 fetchBlogDetailsAndComments();
 
-
-document.getElementById('komentarForma').addEventListener('submit', async (event) => {
-    event.preventDefault();
-
-    const commentText = document.getElementById('comment').value;
-    const apiUrl = 'http://мајндивелопмент.срб/DB/create_comment.php';
-
-    try {
-        const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ blogId, tekst: commentText }),
-        });
-
-        const data = await response.json();
-
-        if (data.status === 'success') {
-            console.log(data.message);
-        } else {
-            alert("Дошло је до грешке! " + data.message);
-        }
-    } catch (error) {
-        alert("Дошло је до грешке! " + error);
-    }
-});
-  
 function displayBlogDetails(blogDetails, comments) {
     const blogContainer = document.querySelector('#blogContainer');
 
@@ -152,10 +119,30 @@ function displayBlogDetails(blogDetails, comments) {
     blogContainer.innerHTML = htmlContent;
 }
 
+document.getElementById('komentarForma').addEventListener('submit', async (event) => {
+    event.preventDefault();
 
+    const commentText = document.getElementById('comment').value;
+    const apiUrl = 'http://мајндивелопмент.срб/DB/create_comment.php';
 
-// Call this function at the start of the page or when needed
-// Assuming blogId is available
-fetchBlogDetailsAndComments(blogId);
+    try {
+        const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ blogId, tekst: commentText }),
+        });
 
-//fetchComments(blogId);
+        const data = await response.json();
+
+        if (data.status === 'success') {
+            console.log(data.message);
+        } else {
+            alert("Дошло је до грешке! " + data.message);
+        }
+    } catch (error) {
+        alert("Дошло је до грешке! " + error);
+    }
+});
+  

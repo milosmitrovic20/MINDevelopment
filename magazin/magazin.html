@@ -71,27 +71,24 @@ session_start();
             <h2 class="mb-8 text-3xl lg:text-4xl tracking-tight font-extrabold text-white">Магазин</h2>
             <form>
                 <div class="flex w-full px-6 sm:px-0">
-                    <button id="dropdown-button" data-dropdown-toggle="dropdown" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium rounded-s-lg text-center text-secondary bg-primary" type="button">All categories <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <button id="dropdown-button" data-dropdown-toggle="dropdown" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium rounded-s-lg text-center text-secondary bg-primary" type="button">Категорије <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                         <path stroke="#092e3e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                     </svg></button>
                     <div id="dropdown" class="z-10 hidden bg-secondary divide-y divide-background rounded-lg shadow w-44">
                         <ul class="py-2 text-sm text-text" aria-labelledby="dropdown-button">
                         <li>
-                            <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mockups</button>
+                            <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Блог</button>
                         </li>
                         <li>
-                            <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Templates</button>
+                            <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Туторијал</button>
                         </li>
                         <li>
-                            <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Design</button>
-                        </li>
-                        <li>
-                            <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logos</button>
+                            <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Вести</button>
                         </li>
                         </ul>
                     </div>
                     <div class="relative w-full">
-                        <input type="search" id="search-dropdown" class="block p-2.5 w-full z-20 text-sm text-text bg-secondary rounded-e-lg" placeholder="Search...." required>
+                        <input type="search" id="search-dropdown" class="block p-2.5 w-full z-20 text-sm text-text bg-secondary rounded-e-lg" placeholder="Претражи...." required>
                         <button type="submit" class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-secondary bg-primary hover:bg-primary-hover rounded-e-lg">
                             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                 <path stroke="#092e3e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
@@ -226,7 +223,7 @@ session_start();
 
     <div class="hidden bg-background opacity-70 top-0 left-0 w-full h-full z-40" id="overlay"></div>
 
-    <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-60 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+    <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
         <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
             <div class="relative p-4 bg-background rounded-lg shadow sm:p-5">
                 <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
@@ -248,10 +245,9 @@ session_start();
                             <label for="category" class="block mb-2 text-sm font-medium text-text">Категорија</label>
                             <select id="category" class="bg-secondary text-gray-400 text-sm rounded-lg block w-full p-2">
                                 <option selected="">Изабери категорију</option>
-                                <option value="TV">TВ/Монитори</option>
-                                <option value="PC">ПЦ</option>
-                                <option value="GA">Гејминг/Конзоле</option>
-                                <option value="PH">Телефони</option>
+                                <option value="блог">Блог</option>
+                                <option value="туторијал">Туторијал</option>
+                                <option value="вест">Вест</option>
                             </select>
                         </div>
                         <div class="sm:col-span-2">

@@ -91,13 +91,14 @@ function displayBlogDetails(blogDetails, comments, author) {
                             class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-secondary bg-primary hover:bg-primary-hover rounded-lg ">
                             Објави коментар
                         </button>
-                    </form>`;
+                    </form>
+                    <div class="commentsSection">`;
 
     for (let i = 0; i < comments.length; i++) {
         htmlContent += createCommentHTML(comments[i]);
     }
 
-    htmlContent += `
+    htmlContent += ` </div>
                 </section>
             </article>
         </div>

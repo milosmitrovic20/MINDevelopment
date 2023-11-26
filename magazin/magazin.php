@@ -141,7 +141,7 @@ session_start();
                         <a href="#" class="hover:underline">Ресурси</a>
                     </li>
                     <li class="mb-4">
-                        <a href="magazin/magazin.html" class="hover:underline">Магазин</a>
+                        <a href="magazin/magazin.php" class="hover:underline">Магазин</a>
                     </li>
                 </ul>
             </div>

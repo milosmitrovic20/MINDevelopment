@@ -14,7 +14,7 @@
     <header>
         <nav class="border-gray-200 px-4 lg:px-6 py-2.5">
             <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-                <a href="../index.html" class="flex items-center">
+                <a href="../index.php" class="flex items-center">
                     <img src="../images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Ћирилко лого" />
                     <span class="self-center text-xl font-semibold whitespace-nowrap text-white">Ћирилко</span>
                 </a>
@@ -41,16 +41,16 @@
                 <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                     <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                         <li>
-                            <a href="../index.html" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text rounded lg:p-0">Почетна</a>
+                            <a href="../index.php" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text rounded lg:p-0">Почетна</a>
                         </li>
                         <li>
-                            <a href="../razvoj/razvoj.html" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Развој</a>
+                            <a href="../razvoj/razvoj.php" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Развој</a>
                         </li>
                         <li>
-                            <a href="./dizajn.html" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-accent lg:p-0" aria-current="page">Дизајн</a>
+                            <a href="./dizajn.php" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-accent lg:p-0" aria-current="page">Дизајн</a>
                         </li>
                         <li>
-                            <a href="../resursi/resursi.html" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Ресурси</a>
+                            <a href="../resursi/resursi.php" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Ресурси</a>
                         </li>
                         <li>
                             <a href="../magazin/magazin.php" class="block py-2 pr-4 pl-3 text-text transition duration-300 transform hover:scale-110 lg:border-0 lg:p-0">Магазин</a>

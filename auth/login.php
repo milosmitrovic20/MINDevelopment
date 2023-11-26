@@ -4,7 +4,7 @@ session_start(); // Start the session
 // Check if user is already logged in
 if (isset($_SESSION['userID'])) {
     // Redirect to a different page if the user is already logged in
-    header('Location: http://мајндивелопмент.срб/magazin/magazin.html'); // Replace 'your_dashboard.php' with your dashboard page
+    header('Location: http://мајндивелопмент.срб/magazin/magazin.php'); // Replace 'your_dashboard.php' with your dashboard page
     exit;
 }
 ?>

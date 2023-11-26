@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/seanvm/fontselect-jquery-plugin/issues"
   },
-  "homepage": "https://github.com/seanvm/fontselect-jquery-plugin#readme"
+  "homepage": "https://github.com/seanvm/fontselect-jquery-plugin#readme",
+  "devDependencies": {
+    "flowbite-typography": "^1.0.3"
+  }
 }

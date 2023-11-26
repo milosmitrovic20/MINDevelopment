@@ -4,7 +4,6 @@ header('Content-Type: application/json');
 include 'db_conn.php';
 
 function verifyUser($pdo, $identifier, $password) {
-    // Check both username and email fields
     $sql = "SELECT korisnik_id, lozinka FROM korisnici WHERE korisnicko_ime = ? OR email = ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$identifier, $identifier]);

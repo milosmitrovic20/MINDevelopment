@@ -8,8 +8,8 @@ async function kreirajKorisnika(event) {
     const nameParts = fullName.split(' ');
     
     if (nameParts.length >= 2) {
-        ime = nameParts[0]; // First part is the first name
-        prezime = nameParts.slice(1).join(' '); // Join the rest as the last name
+        ime = nameParts[0]; 
+        prezime = nameParts.slice(1).join(' ');
     } else {
         alert("Морате унести Ваше пуно име и презиме.");
         return;
@@ -38,7 +38,6 @@ async function kreirajKorisnika(event) {
         if (data.status === 'success') {
             window.location.href = 'login.php';
         } else {
-            // Handle different types of errors based on the message from the server
             if (data.message === "Username already exists") {
                 alert("Корисничко име већ постоји. Молим Вас изаберите друго.");
             } else if (data.message === "Email already exists") {

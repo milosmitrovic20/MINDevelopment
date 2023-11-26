@@ -2,7 +2,6 @@ const urlParams = new URLSearchParams(window.location.search);
 const blogId = urlParams.get('blogId');
 
 async function fetchBlogDetailsAndComments() {
-    //Vraca
     const apiUrl = `http://мајндивелопмент.срб/DB/get_blog_by_id.php?blogId=${blogId}`;
 
     try {
@@ -14,10 +13,8 @@ async function fetchBlogDetailsAndComments() {
             console.log('Comments:', data.data.comments);
             console.log('Author: ', data.data.author);
 
-            // Additional code to handle success:
-            // Display blog details and comments on the page
             displayBlogDetails(data.data.blogDetails, data.data.comments, data.data.author);
-            // stavi event listener kad napravi formu za komentare tek
+
             document.getElementById('komentarForma').addEventListener('submit', async (event) => {
                 event.preventDefault();
 
@@ -46,11 +43,9 @@ async function fetchBlogDetailsAndComments() {
             });
         } else {
             console.error(data.message);
-            // Additional code to handle errors (e.g., display error message to user)
         }
     } catch (error) {
         console.error('Error:', error);
-        // Additional error handling (e.g., display error message)
     }
 }
 
@@ -59,7 +54,6 @@ fetchBlogDetailsAndComments();
 function displayBlogDetails(blogDetails, comments, author) {
     const blogContainer = document.querySelector('#blogContainer');
 
-    // Start with the main HTML structure
     let htmlContent = `
     <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 antialiased">
         <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
@@ -95,7 +89,6 @@ function displayBlogDetails(blogDetails, comments, author) {
                         </button>
                     </form>`;
 
-    // Iterate over the comments and add each comment to the HTML content
     for (let i = 0; i < comments.length; i++) {
         htmlContent += `
         <article class="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
@@ -136,14 +129,12 @@ function displayBlogDetails(blogDetails, comments, author) {
         </article>`;
     }
 
-    // Close the main HTML structure
     htmlContent += `
                 </section>
             </article>
         </div>
     </main>`;
 
-    // Update the inner HTML of the blog container
     blogContainer.innerHTML = htmlContent;
 }
 
@@ -167,15 +158,12 @@ document.getElementById("subscribeButton").addEventListener("click", async (even
         const data = await response.json();
 
         if (data.status === 'success') {
-            // Handle success, e.g., show a success message
             console.log(data.message);
         } else {
-            // Handle errors, e.g., display an error message
             console.error(data.message);
         }
         emailInput.value = '';
     } catch (error) {
-        // Handle network errors or other exceptions
         console.error('Error:', error);
     }
 });

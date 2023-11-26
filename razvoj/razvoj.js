@@ -734,3 +734,23 @@ let cirilicaOutput = document.getElementById("cirilicaOutput");
 konvertujDugme.onclick= function() {
     cirilicaOutput.value = konvertujUCirilicu(latinicaInput.value );
 };
+
+const copyToClipboard = () => {
+    const copyText = document.getElementById("cirilicaOutput");
+    copyText.select();
+    copyText.setSelectionRange(0, copyText.value.length); 
+
+    navigator.clipboard.writeText(copyText.value)
+        .then(() => console.log('Текст копиран'))
+        .catch(err => console.error('Грешка у копирању: ', err));
+};
+
+const clearTextArea = () => {
+    const inputText = document.getElementById("cirilicaOutput");
+    const outputText = document.getElementById("latinicaInput");
+    inputText.value = '';
+    outputText.value = '';
+};
+
+document.getElementById('kopirajDugme').addEventListener('click', copyToClipboard);
+document.getElementById('obrisiDugme').addEventListener('click', clearTextArea);

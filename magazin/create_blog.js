@@ -1,21 +1,3 @@
-let modal = document.getElementById('defaultModal');
-let openModalButton = document.getElementById('defaultModalButton');
-let closeModalButton = document.getElementById('closeModal');
-let form = document.querySelector('form'); // Select the form element
-
-function toggleModal() {
-    modal.classList.toggle('hidden');
-    modal.classList.toggle('flex');
-}
-
-openModalButton.addEventListener('click', function() {
-    toggleModal();
-});
-
-closeModalButton.addEventListener('click', function() {
-    toggleModal();
-});
-
 // Add event listener for form submission
 form.addEventListener('submit', async function(event) {
     event.preventDefault(); // Prevent the default form submission

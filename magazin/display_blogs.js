@@ -8,13 +8,15 @@ function toggleModal() {
     modal.classList.toggle('flex');
 }
 
-openModalButton.addEventListener('click', function() {
-    toggleModal();
-});
-
-closeModalButton.addEventListener('click', function() {
-    toggleModal();
-});
+if (openModalButton != null) {
+    openModalButton.addEventListener('click', function() {
+        toggleModal();
+    });
+    
+    closeModalButton.addEventListener('click', function() {
+        toggleModal();
+    });
+}
 
 async function getAllBlogPosts() {
     const apiUrl = 'http://мајндивелопмент.срб/DB/get_blogs.php'; // Replace with your actual API URL

@@ -1,3 +1,6 @@
+const urlParams = new URLSearchParams(window.location.search);
+const blogId = urlParams.get('id');
+
 async function postComment(blogId, commentText) {
     const apiUrl = 'http://мајндивелопмент.срб/DB/create_comment.php';
 

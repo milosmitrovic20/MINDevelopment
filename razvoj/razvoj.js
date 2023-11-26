@@ -635,7 +635,6 @@ function konvertujUCirilicu(text) {
         ],
     };
 
-    // See: https://en.wikipedia.org/wiki/Zero-width_non-joiner
     var digraphReplacements = {
         "dj": {
             "dj": "d\u200Cj",
@@ -659,7 +658,6 @@ function konvertujUCirilicu(text) {
         }
     };
 
-    // Function to build a trie from a mapping object
     function buildTrie(obj) {
         let trie = {};
         let currentNode;
@@ -674,7 +672,6 @@ function konvertujUCirilicu(text) {
         return trie;
     }
 
-    // Function to split digraphs based on exceptions
     function splitDigraphs(str) {
         const lowercaseStr = str.trim().toLowerCase();
         for (const digraph in digraphExceptions) {
@@ -690,7 +687,6 @@ function konvertujUCirilicu(text) {
         return str;
     }
 
-    // Function to convert a word to Cyrillic
     function wordToCyrillic(word) {
         word = splitDigraphs(word);
         let result = '';
@@ -721,7 +717,6 @@ function konvertujUCirilicu(text) {
         return result;
     }
 
-    // Split the input text into words and process each word
     let words = text.split(/(\s+)/);
     let trie = buildTrie(initialMap);
     return words.map(word => wordToCyrillic(word)).join('');

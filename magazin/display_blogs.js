@@ -1,7 +1,7 @@
 let modal = document.getElementById('defaultModal');
 let openModalButton = document.getElementById('defaultModalButton');
 let closeModalButton = document.getElementById('closeModal');
-let form = document.querySelector('form'); // Select the form element
+let form = document.querySelector('form');
 let overlay = document.getElementById('overlay');
 
 function toggleModal() {
@@ -31,14 +31,14 @@ const toggleDropdown = () => {
 document.getElementById("dropdown-button").addEventListener('click', toggleDropdown);
 
 async function getAllBlogPosts() {
-    const apiUrl = 'http://мајндивелопмент.срб/DB/get_blogs.php'; // Replace with your actual API URL
+    const apiUrl = 'http://мајндивелопмент.срб/DB/get_blogs.php'; 
 
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
 
         if (data.status === 'success') {
-            const blogContainer = document.querySelector('.grid'); // Assuming this is your grid container
+            const blogContainer = document.querySelector('.grid'); 
 
             data.data.forEach(blog => {
                 const blogElement = createBlogPostHTML(blog);
@@ -106,7 +106,6 @@ document.getElementById('blogForm').addEventListener('submit', async function(ev
             console.log(data.message);
             toggleModal(); 
 
-            // Create and display the new blog post
             const newBlogHTML = createBlogPostHTML({ naslov, sadrzaj, kategorija });
             blogContainer.innerHTML = newBlogHTML + blogContainer.innerHTML;
         } else if (data.status === 'error' && data.message === 'Корисник није улогован!') {

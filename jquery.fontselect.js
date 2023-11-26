@@ -46,7 +46,6 @@
       
       Fontselect.prototype.bindEvents = function(){
         var self = this;
-        // Close dropdown automatically on clicks outside dropdown
         $(document).click(function(event){
           if(self.active && !$(event.target).parents('#fontSelect-'+ self.$original.id).length){
             self.toggleDrop();

@@ -49,13 +49,13 @@ session_start();
                             <a href="../index.php" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text rounded lg:p-0">Почетна</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Развој</a>
+                            <a href="../razvoj/razvoj.php" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Развој</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Дизајн</a>
+                            <a href="../dizajn/dizajn.php" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Дизајн</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Ресурси</a>
+                            <a href="../resursi/resursi.php" class="block py-2 pr-4 pl-3 transition duration-300 transform hover:scale-110 text-text lg:p-0">Ресурси</a>
                         </li>
                         <li>
                             <a href="" class="block py-2 pr-4 pl-3 text-accent transition duration-300 transform hover:scale-110 lg:border-0 lg:p-0" aria-current="page">Магазин</a>
@@ -140,13 +140,13 @@ session_start();
                 <h2 class="mb-6 text-sm font-semibold text-text uppercase">Навигација</h2>
                 <ul class="text-text font-medium">
                     <li class="mb-4">
-                        <a href="#" class=" hover:underline">Развој</a>
+                        <a href="../razvoj/razvoj.php" class=" hover:underline">Развој</a>
                     </li>
                     <li class="mb-4">
-                        <a href="#" class="hover:underline">Дизајн</a>
+                        <a href="../dizajn/dizajn.php" class="hover:underline">Дизајн</a>
                     </li>
                     <li class="mb-4">
-                        <a href="#" class="hover:underline">Ресурси</a>
+                        <a href="../resursi/resursi.php" class="hover:underline">Ресурси</a>
                     </li>
                     <li class="mb-4">
                         <a href="magazin/magazin.php" class="hover:underline">Магазин</a>
